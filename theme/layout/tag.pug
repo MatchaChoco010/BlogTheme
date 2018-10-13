@@ -1,8 +1,0 @@
-extends _partial/template.pug
-include _partial/article_excerpt.pug
-
-block content
-  p tag: #{page.tag}
-
-  each post in page.posts.data
-    +article_excerpt(post)

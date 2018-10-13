@@ -1,6 +1,0 @@
-extends _partial/template.pug
-include _partial/article_excerpt.pug
-
-block content
-  each post in page.posts.data
-    +article_excerpt(post)
