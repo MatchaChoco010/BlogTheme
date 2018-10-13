@@ -84,8 +84,19 @@ Barba.Dispatcher.on('initStateChange', () => {
       window.location.pathname.replace(/^\/?/, '/') + window.location.search
   })
 })
-Barba.Prefetch.init()
 
-document.addEventListener('DOMContentLoaded', () => Barba.Pjax.start(), {
-  once: true
-})
+document.addEventListener(
+  'DOMContentLoaded',
+  () => {
+    Barba.Prefetch.init()
+    Barba.Pjax.start()
+
+    document.getElementById('blog-button').addEventListener('click', () => {
+      window.scrollTo(0, 10)
+      scroll()
+    })
+  },
+  {
+    once: true
+  }
+)
