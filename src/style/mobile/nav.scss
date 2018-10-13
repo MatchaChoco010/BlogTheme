@@ -1,0 +1,43 @@
+#nav {
+  transition: $transition;
+
+  position: fixed;
+  top: 0;
+  left: auto;
+  z-index: 5;
+  padding: 0;
+  width: 100vw;
+  font-size: 20px;
+  text-align: right;
+  align-items: flex-end;
+
+  &::before {
+    transition: $transition;
+
+    content: '\0020';
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100vw;
+    height: 50px;
+    background: $white;
+    box-shadow: 0 -3px 5px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  div {
+    background: transparent;
+    transform: none;
+  }
+
+  & > div {
+    display: none;
+  }
+
+  a {
+    div {
+      width: 80px;
+    }
+    position: absolute;
+    margin: -90px -10px;
+  }
+}

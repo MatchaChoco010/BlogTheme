@@ -1,0 +1,18 @@
+article {
+  margin-left: 10px;
+  width: auto;
+
+  .date {
+    left: 0;
+  }
+
+  img,
+  video {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+.toppage article:first-child {
+  margin-top: 100vh;
+}

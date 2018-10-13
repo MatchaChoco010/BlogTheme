@@ -1,9 +1,10 @@
 @import 'colors.scss';
 @import 'fonts.scss';
 
+$transition: 1s;
+
+@import 'desktop/style.scss';
+
 @media (max-width: 979px) {
   @import 'mobile/style.scss';
-}
-@media (min-width: 980px) {
-  @import 'desktop/style.scss';
 }

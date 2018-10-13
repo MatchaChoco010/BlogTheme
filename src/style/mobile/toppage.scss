@@ -1,0 +1,26 @@
+.top {
+  #barba-wrapper::before {
+    transform: translate(120vw) matrix(1, 0, 0.05, 1, 0, 0);
+  }
+
+  #logo {
+    left: auto;
+    top: auto;
+
+    img {
+      width: 100vw;
+      height: 50vw;
+      filter: none;
+    }
+  }
+
+  #nav {
+    top: 0;
+    left: auto;
+
+    &::before {
+      background: transparent;
+      box-shadow: none;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+#background {
+  top: 0;
+  width: 100vw;
+}
+
+#barba-wrapper {
+  width: 100%;
+  padding-left: 0;
+
+  &::before {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    transform: translateX(20px) matrix(1, 0, 0.05, 1, 0, 0);
+  }
+}
+
+@import 'logo.scss';
+@import 'nav.scss';
+@import 'highlight.scss';
+@import 'article.scss';
+@import 'page-nav.scss';
+@import 'footer.scss';
+@import 'toppage.scss';

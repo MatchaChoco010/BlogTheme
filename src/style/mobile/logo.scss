@@ -1,0 +1,21 @@
+#logo {
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 50px;
+  padding: 0;
+
+  &::before {
+    background: transparent;
+  }
+
+  img {
+    width: 80px;
+    height: 40px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    filter: brightness(0);
+  }
+}
