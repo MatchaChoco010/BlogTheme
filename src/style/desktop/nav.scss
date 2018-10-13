@@ -1,0 +1,48 @@
+#nav {
+  transition: $transition;
+
+  position: absolute;
+  top: -210px;
+  left: calc(50vw + 320px);
+  z-index: 10;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+
+  div {
+    transition: $transition;
+
+    transform: matrix(1, 0, -0.3, 1, 0, 0);
+
+    background: linear-gradient(
+      to top,
+      $black,
+      20%,
+      transparent,
+      20.1%,
+      transparent
+    );
+
+    margin-top: 100px;
+    padding-right: 5px;
+
+    box-sizing: border-box;
+    width: 120px;
+
+    text-align: right;
+    color: $black;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+main > p {
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: block;
+  margin-top: 160px;
+  margin-bottom: -40px;
+  margin-left: calc(100px - 2rem);
+}

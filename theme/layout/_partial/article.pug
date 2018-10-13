@@ -1,0 +1,13 @@
+mixin article
+  article
+    h1: a(href=url_for(page.path))= page.title
+    time.date(datatime=page.date.toISOString())= page.date.format('YYYY/MM/DD')
+
+    != page.content
+
+    if page.tags
+      footer
+        ul
+          - for({ name, path } of page.tags.data) {
+            li: a(href=url_for(path))= name
+          - }

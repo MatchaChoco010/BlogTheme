@@ -1,0 +1,61 @@
+- const isTopPage = page.path === 'index.html'
+
+doctype html
+head
+
+  include google_analytics.pug
+
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+
+  != open_graph({ twitter_id: theme.twitter })
+
+  if is_archive()
+    if is_month()
+      title archive: #{page.year}/#{page.month} | #{config.title}
+    else
+      title archive: #{page.year} | #{config.title}
+  else if is_tag()
+    title tag: #{page.tag} | #{config.title}
+  else if page.title
+    title #{page.title} | #{config.title}
+  else
+    title #{config.title}
+
+  != js('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js')
+  != css('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-bright.min.css')
+  script.
+    hljs.configure({useBR: true});
+    document.addEventListener('DOMContentLoaded', () => {
+      Array.from(document.querySelectorAll('.code>pre'), block => {
+        hljs.highlightBlock(block);
+      })
+    })
+
+  != js('https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js')
+
+  != js('/bundle.js')
+  != css('/style.css')
+
+body(class = isTopPage ? 'top' : '')
+  a#logo(href=url_for('/'))
+    img(src=url_for('/logo.svg'))
+  nav#nav
+    div#blog-button Blog
+    a(href=url_for('/About/index.html'))
+      div About
+
+  div#barba-wrapper
+
+    div.barba-container
+      main(class = isTopPage ? 'toppage' : '')
+
+        block content
+
+      include page.pug
+
+      footer#footer
+        != list_tags({ show_count: false })
+        != list_archives({ show_count: false, format: 'MM月 YYYY' })
+
+  div#background

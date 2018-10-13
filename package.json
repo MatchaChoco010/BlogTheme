@@ -1,0 +1,62 @@
+{
+  "name": "blog-theme",
+  "version": "1.0.0",
+  "description": "my blog theme",
+  "scripts": {
+    "server": "cd testsite && hexo server",
+    "build:delete": "del theme testsite/themes/theme -f",
+    "build:scss": "node-sass src/style/style.scss -o tmp/",
+    "build:postcss": "postcss tmp/*.css -u autoprefixer -d theme/source",
+    "build:style": "npm-run-all -s build:scss build:postcss",
+    "build:js": "webpack --mode=development",
+    "build:pug": "copy \"src/layout/**/*.pug\" theme/layout",
+    "build:img": "copy \"src/img/**/*\" theme/source",
+    "build:copy-theme": "copy \"theme/**/*\" testsite/themes/theme",
+    "build": "npm-run-all -s build:delete -p build:js build:style build:pug build:img -s build:copy-theme",
+    "release:delete": "del theme -f",
+    "release:scss": "node-sass src/style/style.scss -o tmp/",
+    "release:postcss": "postcss tmp/*.css -u autoprefixer postcss-clean -d theme/source --no-map",
+    "release:style": "npm-run-all -s release:scss release:postcss",
+    "release:js": "webpack --mode=production",
+    "release:pug": "copy \"src/layout/**/*.pug\" theme/layout",
+    "release:img": "copy \"src/img/**/*\" theme/source",
+    "release": "npm-run-all -s release:delete -p release:js release:style release:pug release:img"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/MatchaChoco010/BlogTheme.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/MatchaChoco010/BlogTheme/issues"
+  },
+  "homepage": "https://github.com/MatchaChoco010/BlogTheme#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "autoprefixer": "^9.1.5",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.4",
+    "copy": "^0.3.2",
+    "del-cli": "^1.1.0",
+    "eslint": "^5.6.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "node-sass": "^4.9.3",
+    "npm-run-all": "^4.1.3",
+    "postcss-clean": "^1.1.0",
+    "postcss-cli": "^6.0.0",
+    "watch": "^1.0.2",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "barba.js": "^1.0.0"
+  }
+}

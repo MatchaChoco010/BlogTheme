@@ -1,0 +1,77 @@
+.top {
+  #logo {
+    transition: $transition;
+
+    left: calc(50vw - 450px);
+    top: calc(85vh - 300px);
+    box-sizing: border-box;
+    width: 400px;
+    height: 300px;
+    padding: 50px 0;
+
+    &::before {
+      transition: $transition;
+
+      transform: translateX(-35px) matrix(1, 0, 0.1, 1, 0, 0);
+    }
+
+    img {
+      transition: $transition;
+
+      width: 400px;
+      height: 200px;
+    }
+  }
+
+  #nav {
+    transition: $transition;
+
+    position: absolute;
+    top: calc(85vh - 80px);
+    left: calc(50vw - 30px);
+
+    div {
+      transition: $transition;
+
+      width: 150px;
+      margin-top: 10px;
+      padding-left: 10px;
+      margin-top: 10px;
+
+      font-size: 1rem;
+
+      cursor: pointer;
+    }
+
+    #blog-button {
+      opacity: 1;
+    }
+  }
+
+  #barba-wrapper {
+    &::before {
+      transition: $transition;
+
+      transform: translate(150px) matrix(1, 0, 0.05, 1, 0, 0);
+    }
+  }
+
+  article {
+    transition: $transition;
+
+    margin-bottom: 200px;
+    opacity: 0;
+  }
+
+  #page-nav {
+    transition: $transition;
+
+    opacity: 0;
+  }
+
+  #footer {
+    transition: $transition;
+
+    opacity: 0;
+  }
+}

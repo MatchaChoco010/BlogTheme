@@ -1,0 +1,51 @@
+#footer {
+  transition: $transition;
+
+  opacity: 1;
+
+  box-sizing: border-box;
+  width: 980px;
+  padding: 30px 80px 30px 220px;
+  margin: auto;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  font-size: 0.9rem;
+
+  display: flex;
+  justify-content: space-between;
+
+  .archive-list {
+    margin: 0;
+    padding: 0 20px;
+
+    min-width: 80px;
+
+    li {
+      list-style-type: none;
+      text-align: right;
+    }
+  }
+
+  .tag-list {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+
+    li {
+      list-style-type: none;
+      text-align: left;
+      padding-right: 20px;
+      line-height: 1.6rem;
+    }
+
+    a::before {
+      content: '#';
+    }
+  }
+}

@@ -1,0 +1,33 @@
+#logo {
+  transition: $transition;
+
+  position: fixed;
+  top: 0;
+  left: calc(50vw - 485px);
+  z-index: 10;
+  width: 100px;
+  padding: 10px 10px 5px 30px;
+  overflow: hidden;
+  display: block;
+
+  &::before {
+    transition: $transition;
+
+    content: '\0020';
+    width: 600px;
+    height: 400px;
+    background: $black;
+    transform: matrix(1, 0, 0.1, 1, 0, 0);
+    position: absolute;
+    top: -100px;
+    left: 15px;
+    z-index: -1;
+  }
+
+  img {
+    transition: $transition;
+
+    width: 100px;
+    height: 50px;
+  }
+}

@@ -1,0 +1,20 @@
+if page.posts
+  nav#page-nav
+    != paginator({prev_text: '« 戻る', next_text: '次へ »'})
+else
+  nav#page-nav
+    if page.prev
+      a#next-link(href=url_for(page.prev.path))
+        p 次の記事
+        p= page.prev.title
+    else
+      a#prev-link
+
+    div#dot
+
+    if page.next
+      a#prev-link(href=url_for(page.next.path))
+        p 前の記事
+        p= page.next.title
+    else
+      a#next-link
