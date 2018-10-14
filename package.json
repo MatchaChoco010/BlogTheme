@@ -11,8 +11,9 @@
     "build:js": "webpack --mode=development",
     "build:pug": "copy \"src/layout/**/*.pug\" theme/layout",
     "build:img": "copy \"src/img/**/*\" theme/source",
+    "build:favicon": "copy \"src/favicon/**/*\" theme/source",
     "build:copy-theme": "copy \"theme/**/*\" testsite/themes/theme",
-    "build": "npm-run-all -s build:delete -p build:js build:style build:pug build:img -s build:copy-theme",
+    "build": "npm-run-all -s build:delete -p build:js build:style build:pug build:img build:favicon -s build:copy-theme",
     "release:delete": "del theme -f",
     "release:scss": "node-sass src/style/style.scss -o tmp/",
     "release:postcss": "postcss tmp/*.css -u autoprefixer postcss-clean -d theme/source --no-map",
@@ -20,7 +21,8 @@
     "release:js": "webpack --mode=production",
     "release:pug": "copy \"src/layout/**/*.pug\" theme/layout",
     "release:img": "copy \"src/img/**/*\" theme/source",
-    "release": "npm-run-all -s release:delete -p release:js release:style release:pug release:img"
+    "release:favicon": "copy \"src/favicon/**/*\" theme/source",
+    "release": "npm-run-all -s release:delete -p release:js release:style release:pug release:img release:favicon"
   },
   "repository": {
     "type": "git",
