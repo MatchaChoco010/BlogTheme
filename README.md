@@ -7,7 +7,7 @@ npm run server
 npm run release
 ```
 
-`hexo-renderer-pub` is required.
+`hexo-renderer-pug` is required.
 
 _config.yml:
 
