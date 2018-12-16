@@ -1,4 +1,4 @@
-/* global gtag, gtagCode, hljs, Barba */
+/* global gtag, gtagCode, hljs, Barba, twttr */
 
 const SCROLL_TOP_THRESHOLD = 10
 function scroll () {
@@ -83,6 +83,11 @@ Barba.Dispatcher.on('initStateChange', () => {
     page_path:
       window.location.pathname.replace(/^\/?/, '/') + window.location.search
   })
+})
+Barba.Dispatcher.on('newPageReady', () => {
+  if (typeof twttr !== 'undefined') {
+    twttr.widgets.load()
+  }
 })
 
 document.addEventListener(
