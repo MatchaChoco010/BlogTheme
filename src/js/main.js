@@ -41,8 +41,12 @@ Barba.Pjax.getTransition = () => Transition
 Barba.Dispatcher.on(
   'newPageReady',
   (currentStatus, prevStatus, HTMLElementContainer, newPageRawHTML) => {
-    Array.from(document.querySelectorAll('.code>pre'), block => {
-      hljs.highlightBlock(block)
+    Array.from(document.querySelectorAll('.highlight'), figure => {
+      const className = figure.className
+      Array.from(figure.querySelectorAll('.code>pre'), block => {
+        block.className = className
+        hljs.highlightBlock(block)
+      })
     })
 
     const head = document.head
