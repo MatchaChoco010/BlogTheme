@@ -44,7 +44,9 @@ Barba.Dispatcher.on(
     Array.from(document.querySelectorAll('.highlight'), figure => {
       const className = figure.className
       Array.from(figure.querySelectorAll('.code>pre'), block => {
-        block.className = className
+        if (!className.includes('plain')) {
+          block.className = className
+        }
         hljs.highlightBlock(block)
       })
     })
