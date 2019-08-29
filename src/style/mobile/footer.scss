@@ -2,7 +2,18 @@
   padding: 30px;
   width: 100%;
 
-  .tag-list {
-    flex-direction: column;
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #github-kusa {
+    width: 100%;
+
+    img {
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+      width: 100%;
+    }
   }
 }

@@ -14,38 +14,53 @@
 
   font-size: 0.9rem;
 
-  display: flex;
-  justify-content: space-between;
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
 
-  .archive-list {
-    margin: 0;
-    padding: 0 20px;
+    .archive-list {
+      margin: 0;
+      padding: 0 20px;
 
-    min-width: 80px;
+      min-width: 80px;
 
-    li {
-      list-style-type: none;
-      text-align: right;
+      li {
+        list-style-type: none;
+        text-align: right;
+      }
+    }
+
+    .tag-list {
+      margin: 0;
+      padding: 0;
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: start;
+      align-content: start;
+
+      width: calc(100% - 450px);
+
+      li {
+        list-style-type: none;
+        text-align: left;
+        padding-right: 20px;
+        line-height: 1.6rem;
+      }
+
+      a::before {
+        content: '#';
+      }
     }
   }
 
-  .tag-list {
-    margin: 0;
-    padding: 0;
+  #github-kusa {
+    width: 100%;
 
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-
-    li {
-      list-style-type: none;
-      text-align: left;
-      padding-right: 20px;
-      line-height: 1.6rem;
-    }
-
-    a::before {
-      content: '#';
+    img {
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+      width: 100%;
     }
   }
 }

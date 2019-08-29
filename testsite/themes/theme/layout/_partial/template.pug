@@ -61,7 +61,11 @@ body(class = isTopPage ? 'top' : '')
       include page.pug
 
       footer#footer
-        != list_tags({ show_count: false })
-        != list_archives({ show_count: false, format: 'MM月 YYYY' })
+        a#github-kusa(href="https://github.com/MatchaChoco010")
+          <img src="https://grass-graph.moshimo.works/images/MatchaChoco010.png?background=none">
+        div.footer-content
+          != list_tags({ show_count: false })
+          != list_archives({ show_count: false, format: 'MM月 YYYY' })
+          <a class="twitter-timeline" data-height="800" data-width="320" data-theme="light" href="https://twitter.com/MatchaChoco010?ref_src=twsrc%5Etfw">Tweets by MatchaChoco010</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
   div#background
