@@ -1,12 +1,17 @@
 .gutter {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(0, 0, 0, 0.8);
   text-align: right;
   padding: 1rem;
 }
 
 .highlight {
-  background: black;
+  background: #f8f8f8;
   width: 100%;
   margin: 1rem 0;
   overflow: auto;
+  font-size: 0.8rem;
+}
+
+figure.highlight {
+  border: solid 1px rgba(0, 0, 0, 0.8);
 }
