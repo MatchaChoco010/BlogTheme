@@ -261,7 +261,6 @@ article {
   width: 660px;
   margin-left: 140px;
   margin-right: 40px;
-  margin-bottom: 100px;
   display: flex;
   position: relative;
   justify-content: space-between; }
@@ -336,29 +335,38 @@ article {
   position: absolute;
   left: 0;
   right: 0;
-  font-size: 0.9rem;
-  display: flex;
-  justify-content: space-between; }
-  #footer .archive-list {
-    margin: 0;
-    padding: 0 20px;
-    min-width: 80px; }
-    #footer .archive-list li {
-      list-style-type: none;
-      text-align: right; }
-  #footer .tag-list {
-    margin: 0;
-    padding: 0;
+  font-size: 0.9rem; }
+  #footer .footer-content {
     display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start; }
-    #footer .tag-list li {
-      list-style-type: none;
-      text-align: left;
-      padding-right: 20px;
-      line-height: 1.6rem; }
-    #footer .tag-list a::before {
-      content: '#'; }
+    justify-content: space-between; }
+    #footer .footer-content .archive-list {
+      margin: 0;
+      padding: 0 20px;
+      min-width: 80px; }
+      #footer .footer-content .archive-list li {
+        list-style-type: none;
+        text-align: right; }
+    #footer .footer-content .tag-list {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: start;
+      align-content: start;
+      width: calc(100% - 450px); }
+      #footer .footer-content .tag-list li {
+        list-style-type: none;
+        text-align: left;
+        padding-right: 20px;
+        line-height: 1.6rem; }
+      #footer .footer-content .tag-list a::before {
+        content: '#'; }
+  #footer #github-kusa {
+    width: 100%; }
+    #footer #github-kusa img {
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+      width: 100%; }
 
 .top #logo {
   transition: 0.7s;
@@ -506,8 +514,15 @@ figure.highlight {
   #footer {
     padding: 30px;
     width: 100%; }
-    #footer .tag-list {
-      flex-direction: column; }
+    #footer .footer-content {
+      display: flex;
+      flex-wrap: wrap; }
+    #footer #github-kusa {
+      width: 100%; }
+      #footer #github-kusa img {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        width: 100%; }
   .top #barba-wrapper::before {
     transform: translate(120vw) matrix(1, 0, 0.05, 1, 0, 0); }
   .top #logo {
